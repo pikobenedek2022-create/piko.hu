@@ -1004,15 +1004,7 @@ footer:after {
     color: #b79a60;
     font-weight: 800;
 }
-
-/* =====================================
-   KÉK-ARANY HULLÁMOS MENÜSÁV
-===================================== */
-
-
-/* =====================================
-   KÉK-ARANY HULLÁMOS MENÜSÁV
-===================================== */
+/* KÉK-ARANY DÍSZÍTÉS A MENÜSÁV TETEJÉN */
 
 .topbar {
     position: fixed !important;
@@ -1022,40 +1014,22 @@ footer:after {
     width: 100% !important;
     height: 82px !important;
     z-index: 99999 !important;
-    background: #102f4d !important;
-    border: none !important;
-    box-shadow: none !important;
+    background: #ffffff !important;
+    border-bottom: 1px solid rgba(16,47,77,.12) !important;
     overflow: visible !important;
 }
 
-/* Arany alsó hullám */
+/* Kék felső díszítő sáv arany szegéllyel */
 .topbar::before {
-    content: "" !important;
-    display: block !important;
-    position: absolute !important;
-    left: -5% !important;
-    bottom: -22px !important;
-    width: 110% !important;
-    height: 36px !important;
-    border-radius: 50% !important;
-    background: #b79a60 !important;
-    z-index: 0 !important;
-    pointer-events: none !important;
-}
-
-/* Sötétkék hullám */
-.topbar::after {
-    content: "" !important;
-    display: block !important;
-    position: absolute !important;
-    left: -5% !important;
-    bottom: -16px !important;
-    width: 110% !important;
-    height: 36px !important;
-    border-radius: 50% !important;
-    background: #102f4d !important;
-    z-index: 0 !important;
-    pointer-events: none !important;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 9px;
+    background: #102f4d;
+    border-bottom: 3px solid #b79a60;
+    z-index: 1;
 }
 
 /* Logó és menüpontok */
@@ -1063,24 +1037,29 @@ footer:after {
     position: relative !important;
     z-index: 2 !important;
     height: 82px !important;
+    background: #ffffff !important;
 }
 
 .topbar .brand,
 .topbar .brand strong,
 .topbar .brand small,
 .topbar .navlinks a,
-.topbar .language-switch a,
-.topbar .menu {
-    color: #ffffff !important;
+.topbar .language-switch a {
+    color: #102f4d !important;
 }
 
 .topbar .navlinks a.active,
 .topbar .navlinks a:hover,
-.topbar .language-switch a.active {
-    color: #d0b77e !important;
+.topbar .language-switch a.active,
+.topbar .language-switch a:hover {
+    color: #b79a60 !important;
 }
 
-/* Mobilmenü */
+.topbar .navlinks a.active::after {
+    background: #b79a60 !important;
+}
+
+/* Mobilnézet */
 @media (max-width: 650px) {
     .topbar {
         height: 72px !important;
@@ -1100,14 +1079,13 @@ footer:after {
     }
 
     .topbar .menu {
-        color: #ffffff !important;
+        color: #102f4d !important;
     }
 
     body {
         padding-top: 72px !important;
     }
 }
-
 /* Görgetéskor a szekciócímek ne kerüljenek a menü alá */
 section[id] {
     scroll-margin-top: 100px;
