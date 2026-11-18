@@ -1202,6 +1202,27 @@ body {
     color: #b79a60;
     border: none;
 }
+/* HULLÁM JAVÍTÁSA */
+.topbar::before {
+    display: block !important;
+    bottom: -35px !important;
+    height: 65px !important;
+    z-index: 0 !important;
+    background: #b79a60 !important;
+}
+
+.topbar::after {
+    display: block !important;
+    bottom: -28px !important;
+    height: 65px !important;
+    z-index: 0 !important;
+    background: #102f4d !important;
+}
+
+.topbar .nav {
+    position: relative !important;
+    z-index: 2 !important;
+}
 
 .topbar::after {
    
