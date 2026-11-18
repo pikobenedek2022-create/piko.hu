@@ -1201,3 +1201,87 @@ body {
     color: #b79a60;
     border: none;
 }
+
+/* =====================================
+   SÖTÉTKÉK-ARANY HULLÁMOS MENÜSÁV
+===================================== */
+
+.topbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+
+    background: #102f4d;
+    border-bottom: none;
+    backdrop-filter: none;
+    overflow: visible;
+}
+
+/* Arany hullám a menüsor alatt */
+.topbar::before {
+    content: "";
+    position: absolute;
+    left: -5%;
+    bottom: -40px;
+    width: 110%;
+    height: 80px;
+    border-radius: 50%;
+    background: #b79a60;
+    z-index: 0;
+}
+
+/* Sötétkék hullám az arany fölött */
+.topbar::after {
+    content: "";
+    position: absolute;
+    left: -5%;
+    bottom: -33px;
+    width: 110%;
+    height: 80px;
+    border-radius: 50%;
+    background: #102f4d;
+    z-index: 0;
+}
+
+/* Menüsor tartalma */
+.topbar .nav {
+    position: relative;
+    z-index: 1;
+}
+
+.topbar .brand strong,
+.topbar .brand small,
+.topbar .navlinks a,
+.topbar .language-switch a,
+.topbar .menu {
+    color: #ffffff;
+}
+
+.topbar .brand small {
+    color: #d0d9e2;
+}
+
+.topbar .navlinks a:hover {
+    color: #d0b77e;
+}
+
+.topbar .language-switch a.active {
+    color: #d0b77e;
+}
+
+/* Mobil menü */
+@media (max-width: 650px) {
+    .topbar .navlinks {
+        background: #ffffff;
+    }
+
+    .topbar .navlinks a {
+        color: #102f4d;
+    }
+
+    .topbar .menu {
+        color: #ffffff;
+    }
+}
