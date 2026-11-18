@@ -1201,4 +1201,11 @@ body {
     color: #b79a60;
     border: none;
 }
+/* Hullámok feljebb húzása, hogy ne érjenek a logóhoz */
+.topbar::before {
+    bottom: -12px !important;
+}
 
+.topbar::after {
+    bottom: -5px !important;
+}
