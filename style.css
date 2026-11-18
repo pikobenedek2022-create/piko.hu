@@ -1029,7 +1029,7 @@ header::after {
 
 /* Többrétegű, íves háttér a menüsávon belül */
 .topbar::before {
-   bottom: -12px !important;
+  
     content: "";
     position: absolute;
     inset: 0;
@@ -1040,7 +1040,7 @@ header::after {
 }
 
 /* Régi hullámok kikapcsolása */
-.topbar::after{ bottom: -5px !important;},
+.topbar::after,
 header::after {
     display: none !important;
 }
