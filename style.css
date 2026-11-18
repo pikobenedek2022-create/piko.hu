@@ -1207,5 +1207,5 @@ body {
 }
 
 .topbar::after {
-    bottom: -5px !important;
+    bottom: 5px !important;
 }
