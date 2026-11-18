@@ -1208,40 +1208,45 @@ body {
     display: none !important;
     content: none !important;
 }
-/* A KÉK-ARANY DÍSZÍTÉS KERÜLJÖN A MENÜ ELÉ */
+/* VASTAGABB KÉK-ARANY HULLÁM A MENÜ TETEJÉN */
 
 .topbar {
     position: fixed !important;
-    isolation: isolate !important;
     background: #ffffff !important;
     overflow: visible !important;
+    isolation: isolate !important;
 }
 
+/* Kék hullámos felső sáv */
 .topbar::before {
     content: "" !important;
     display: block !important;
     position: absolute !important;
     top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 12px !important;
+    left: -2% !important;
+    width: 104% !important;
+    height: 32px !important;
     background: #102f4d !important;
-    border-bottom: 3px solid #b79a60 !important;
-    z-index: 10 !important;
+    border-bottom: 4px solid #b79a60 !important;
+    border-radius: 0 0 50% 50% / 0 0 45% 45% !important;
+    z-index: 5 !important;
     pointer-events: none !important;
 }
 
+/* Régi hullám kikapcsolása */
 .topbar::after {
     display: none !important;
     content: none !important;
 }
 
+/* Fehér menüsáv */
 .topbar .nav {
     position: relative !important;
     z-index: 2 !important;
     background: #ffffff !important;
 }
-/* Logó és menüpontok sötétkék színnel */
+
+/* Sötétkék logó és menüpontok */
 .topbar .brand,
 .topbar .brand strong,
 .topbar .brand small,
@@ -1249,16 +1254,4 @@ body {
 .topbar .language-switch a,
 .topbar .menu {
     color: #102f4d !important;
-}
-
-/* Arany kiemelés */
-.topbar .navlinks a.active,
-.topbar .navlinks a:hover,
-.topbar .language-switch a.active,
-.topbar .language-switch a:hover {
-    color: #b79a60 !important;
-}
-
-.topbar .navlinks a.active::after {
-    background: #b79a60 !important;
 }
