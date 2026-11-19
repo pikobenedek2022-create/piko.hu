@@ -1020,14 +1020,15 @@ footer:after {
 }
 
 
-/* MAGASABB, KÉK-ARANY HULLÁMOS MENÜSÁV */
+/* TÖBB, NAGY KILENGÉSŰ KÉK-ARANY HULLÁM */
 
 .topbar {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
     right: 0 !important;
-    height: 105px !important;
+    width: 100% !important;
+    height: 145px !important;
     background: #ffffff !important;
     overflow: visible !important;
     isolation: isolate !important;
@@ -1035,44 +1036,57 @@ footer:after {
     border: none !important;
 }
 
-/* Vastag arany hullám */
+/* Arany hullám - nagyobb kilengésekkel */
 .topbar::before {
     content: "" !important;
     position: absolute !important;
     top: 0 !important;
-    left: -3% !important;
-    width: 106% !important;
-    height: 52px !important;
+    left: -5% !important;
+    width: 110% !important;
+    height: 105px !important;
     background: #b79a60 !important;
-    clip-path: ellipse(75% 100% at 50% 0%) !important;
+    clip-path: polygon(
+        0 0, 100% 0, 100% 52%,
+        92% 65%, 84% 48%, 76% 70%,
+        68% 45%, 60% 72%, 52% 48%,
+        44% 72%, 36% 45%, 28% 70%,
+        20% 48%, 12% 68%, 5% 50%, 0 62%
+    ) !important;
     z-index: 1 !important;
     pointer-events: none !important;
 }
 
-/* Kék hullám az arany fölött */
+/* Sötétkék hullám */
 .topbar::after {
     content: "" !important;
     position: absolute !important;
     top: 0 !important;
-    left: -3% !important;
-    width: 106% !important;
-    height: 44px !important;
+    left: -5% !important;
+    width: 110% !important;
+    height: 94px !important;
     background: #102f4d !important;
-    clip-path: ellipse(75% 100% at 50% 0%) !important;
+    clip-path: polygon(
+        0 0, 100% 0, 100% 48%,
+        92% 61%, 84% 44%, 76% 66%,
+        68% 41%, 60% 68%, 52% 44%,
+        44% 68%, 36% 41%, 28% 66%,
+        20% 44%, 12% 64%, 5% 46%, 0 58%
+    ) !important;
     z-index: 2 !important;
     pointer-events: none !important;
 }
 
-/* Fehér menüsáv, lejjebb helyezett logóval és menüpontokkal */
+/* A fehér menüsáv lejjebb kerül */
 .topbar .nav {
     position: relative !important;
     z-index: 3 !important;
-    height: 105px !important;
-    padding-top: 35px !important;
-    background: #ffffff !important;
+    height: 145px !important;
+    padding-top: 90px !important;
     box-sizing: border-box !important;
+    background: #ffffff !important;
 }
 
+/* Logó és menüpontok */
 .topbar .brand,
 .topbar .brand strong,
 .topbar .brand small,
@@ -1082,6 +1096,7 @@ footer:after {
     color: #102f4d !important;
 }
 
+/* Arany aktív kiemelés */
 .topbar .navlinks a.active,
 .topbar .navlinks a:hover,
 .topbar .language-switch a.active {
@@ -1095,35 +1110,32 @@ footer:after {
 /* Mobilnézet */
 @media (max-width: 650px) {
     .topbar {
-        height: 88px !important;
+        height: 125px !important;
     }
 
     .topbar .nav {
-        height: 88px !important;
-        padding-top: 30px !important;
+        height: 125px !important;
+        padding-top: 82px !important;
     }
 
     .topbar .navlinks {
-        top: 88px !important;
+        top: 125px !important;
         background: #ffffff !important;
     }
 
-    .topbar .navlinks a {
-        color: #102f4d !important;
-    }
-
+    .topbar .navlinks a,
     .topbar .menu {
         color: #102f4d !important;
     }
 
     body {
-        padding-top: 88px !important;
+        padding-top: 125px !important;
     }
 }
 
-/* Az oldal tartalma ne csússzon a magasabb menü alá */
+/* Az oldal tartalmának eltolása */
 @media (min-width: 651px) {
     body {
-        padding-top: 105px !important;
+        padding-top: 145px !important;
     }
 }
