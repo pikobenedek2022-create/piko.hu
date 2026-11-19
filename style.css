@@ -1213,8 +1213,12 @@ body {
 /* ASZTALI OLDAL ELTOLÁSA */
 @media (max-width: 650px) {
     .topbar .nav {
-       
         transform: translateY(-20px) !important;
+    }
+
+    .topbar .nav a {
+        position: relative;
+        top: 5px;
     }
 }
 /* FEJLÉC RÖGZÍTÉSE */
