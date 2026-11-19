@@ -1222,7 +1222,7 @@ body {
         width: 100% !important;
         height: 72px !important;
         margin-top: 45px !important;
-        padding: 5px 12px !important;
+        padding:12px 5px !important;
         box-sizing: border-box !important;
         gap: 8px !important;
     }
