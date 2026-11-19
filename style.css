@@ -1216,9 +1216,10 @@ body {
         transform: translateY(-20px) !important;
     }
 
-    .topbar .nav a {
-        position: relative;
-        top: 10px;
+    .topbar .nav a,
+    .topbar .nav button,
+    .topbar .nav .nav-link {
+        transform: translateY(8px) !important;
     }
 }
 /* FEJLÉC RÖGZÍTÉSE */
