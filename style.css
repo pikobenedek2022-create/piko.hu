@@ -1268,3 +1268,8 @@ body {
         background-repeat: no-repeat, no-repeat !important;
     }
 }
+@media (max-width: 650px) {
+    .hero-note span {
+        color: #000000 !important;
+    }
+}
