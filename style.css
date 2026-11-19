@@ -1004,101 +1004,6 @@ footer:after {
     color: #b79a60;
     font-weight: 800;
 }
-/* Hullámos vonal a menüsor alatt */
-/* FIX MENÜSÁV */
-..topbar {
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    z-index: 9999;
-    height: 82px;
-    background: #fff !important;
-    background-image: none !important;
-    box-shadow: 0 4px 15px rgba(16, 47, 77, 0.08);
-}
-
-.topbar::before,
-.topbar::after,
-header::before,
-header::after {
-    display: none !important;
-    content: none !important;
-}
-
-/* Többrétegű, íves háttér a menüsávon belül */
-.topbar::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath fill='%23e8e5d9' d='M0 58 C180 85 300 28 480 43 S800 85 1000 63 S1280 45 1440 5 V100 H0Z'/%3E%3Cpath fill='%23b9b6a3' d='M0 65 C180 91 300 36 480 51 S800 91 1000 70 S1280 52 1440 12 V100 H0Z'/%3E%3Cpath fill='%233c6d89' d='M0 72 C180 98 300 43 480 58 S800 97 1000 77 S1280 60 1440 20 V100 H0Z'/%3E%3Cpath fill='%238baab5' d='M0 78 C180 102 300 50 480 65 S800 102 1000 84 S1280 68 1440 28 V100 H0Z'/%3E%3Cpath fill='%23f7f8fa' d='M0 84 C180 106 300 57 480 72 S800 108 1000 91 S1280 76 1440 36 V100 H0Z'/%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-}
-
-/* Régi hullámok kikapcsolása */
-.topbar::after,
-header::after {
-    display: none !important;
-}
-
-/* Menü elrendezése */
-.nav {
-    position: relative;
-    z-index: 2;
-    height: 82px;
-}
-
-/* Menüpontok */
-.navlinks a {
-    position: relative;
-    display: inline-block;
-    padding: 12px 0;
-    color: #18263a;
-    transition: color .25s ease;
-}
-
-/* Aktuális menüpont */
-.navlinks a.active {
-    color: #b79a60 !important;
-    font-weight: 800;
-}
-
-/* Arany aláhúzás */
-.navlinks a.active::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 5px;
-    width: 100%;
-    height: 3px;
-    border-radius: 5px;
-    background: #b79a60;
-}
-
-/* Görgetéskor ne kerüljön a menü alá a szekció címe */
-section[id] {
-    scroll-margin-top: 100px;
-}
-html {
-    scroll-padding-top: 90px;
-}
-
-header,
-header.topbar,
-.topbar {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    width: 100% !important;
-    z-index: 99999 !important;
-    background: #fff !important;
-    background-image: none !important;
-    transform: none !important;
-}
 
 body {
     padding-top: 82px !important;
@@ -1202,86 +1107,140 @@ body {
     border: none;
 }
 
-/* =====================================
-   SÖTÉTKÉK-ARANY HULLÁMOS MENÜSÁV
-===================================== */
+/
+/* =========================================
+   FEJLÉC – TÖBB LÁGY ARANY HULLÁM,
+   VÉKONY SÖTÉTKÉK RÉTEGGEL
+========================================= */
 
 .topbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 5;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 182px !important;
+    z-index: 9999 !important;
 
-    background: #102f4d;
-    border-bottom: none;
-    backdrop-filter: none;
-    overflow: visible;
+    background: linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 50px,
+        #ffffff 50px,
+        #ffffff 100%
+    ) !important;
+
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    overflow: visible !important;
+    isolation: isolate;
 }
 
-/* Arany hullám a menüsor alatt */
+/* LÁGY, LAPOS ARANY HULLÁM */
 .topbar::before {
     content: "";
     position: absolute;
+    top: 0;
     left: -5%;
-    bottom: -40px;
     width: 110%;
-    height: 80px;
-    border-radius: 50%;
-    background: #b79a60;
+    height: 115px;
     z-index: 0;
+    background: #b79a60;
+
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 115' preserveAspectRatio='none'%3E%3Cpath d='M0 0 H1440 V48 C1320 68 1200 68 1080 48 S840 28 720 48 S480 68 360 48 S120 28 0 48 Z' fill='white'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 115' preserveAspectRatio='none'%3E%3Cpath d='M0 0 H1440 V48 C1320 68 1200 68 1080 48 S840 28 720 48 S480 68 360 48 S120 28 0 48 Z' fill='white'/%3E%3C/svg%3E");
+
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
 }
 
-/* Sötétkék hullám az arany fölött */
+/* VÉKONY SÖTÉTKÉK HULLÁM */
 .topbar::after {
     content: "";
     position: absolute;
+    top: 0;
     left: -5%;
-    bottom: -33px;
     width: 110%;
-    height: 80px;
-    border-radius: 50%;
+    height: 100px;
+    z-index: 1;
     background: #102f4d;
-    z-index: 0;
+
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 115' preserveAspectRatio='none'%3E%3Cpath d='M0 0 H1440 V44 C1320 64 1200 64 1080 44 S840 24 720 44 S480 64 360 44 S120 24 0 44 Z' fill='white'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 115' preserveAspectRatio='none'%3E%3Cpath d='M0 0 H1440 V44 C1320 64 1200 64 1080 44 S840 24 720 44 S480 64 360 44 S120 24 0 44 Z' fill='white'/%3E%3C/svg%3E");
+
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
 }
 
-/* Menüsor tartalma */
+
+
+/* FEHÉR MENÜSÁV */
 .topbar .nav {
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    height: 82px;
+    margin-top: 50px;
+    background: transparent;
 }
 
-.topbar .brand strong,
-.topbar .brand small,
-.topbar .navlinks a,
-.topbar .language-switch a,
-.topbar .menu {
-    color: #ffffff;
+/* MENÜPONTOK */
+.topbar .navlinks a {
+    color: #102f4d !important;
 }
 
-.topbar .brand small {
-    color: #d0d9e2;
+.topbar .navlinks a:hover,
+.topbar .navlinks a.active {
+    color: #b79a60 !important;
 }
 
-.topbar .navlinks a:hover {
-    color: #d0b77e;
-}
-
-.topbar .language-switch a.active {
-    color: #d0b77e;
-}
-
-/* Mobil menü */
+/* MOBIL */
 @media (max-width: 650px) {
-    .topbar .navlinks {
-        background: #ffffff;
+    .topbar {
+        height: 160px !important;
+
+        background: linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent 45px,
+            #ffffff 45px,
+            #ffffff 100%
+        ) !important;
     }
 
-    .topbar .navlinks a {
-        color: #102f4d;
+    .topbar::before {
+        height: 75px;
     }
 
-    .topbar .menu {
-        color: #ffffff;
+    .topbar::after {
+        height: 70px;
+    }
+
+    .topbar .nav {
+        height: 72px;
+        margin-top: 45px;
+    }
+
+    body {
+        padding-top: 160px !important;
+    }
+
+    .hero {
+        padding-top: 47px;
+    }
+}
+
+/* ASZTALI OLDAL ELTOLÁSA */
+@media (min-width: 651px) {
+    body {
+        padding-top: 182px !important;
+    }
+
+    .hero {
+        padding-top: 55px;
     }
 }
